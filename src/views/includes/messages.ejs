@@ -1,0 +1,23 @@
+<% if (errors.length > 0) { %>
+<div class="flex items-center justify-center">
+    <div class="">
+        <div class="bg-red-200 border border-red-500 py-4 px-10 rounded-xl font-medium text-lg text-center m-4">
+            <% errors.forEach(erro => { %>
+                <%= erro %><br>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<% if (success.length > 0) { %>
+<div class="flex items-center justify-center">
+    <div class="">
+        <div class="bg-green-200 border border-green-500 py-4 px-10 rounded-xl font-medium text-lg text-center m-4">
+            <% success.forEach(success => { %>
+                <%= success %><br>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<% } %>

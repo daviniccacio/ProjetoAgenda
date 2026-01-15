@@ -1,0 +1,33 @@
+<nav class="bg-[#202121] border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      
+      <div class="flex items-center">
+        <div class="flex items-center">
+          <a href="/" class="text-xl font-semibold text-white">Agenda</a>
+        </div>
+        
+        <div class="hidden md:ml-8 md:flex md:space-x-4">
+          <a href="/contato/index" class="text-white text-xl font-semibold">
+            Contatos
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <% if(user) { %>
+          <div class="flex items-center space-x-4">
+            <a href="/login/logout" class="text-white font-semibold text-xl">
+              Sair
+            </a>
+          </div>
+        <% } else { %>
+          <a href="/login/index" class="text-white font-semibold text-xl">
+            Entrar
+          </a>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>

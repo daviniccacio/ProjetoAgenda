@@ -1,0 +1,55 @@
+<%- include('includes/header') %>
+<%- include('includes/nav') %>
+
+<main class="container mx-auto px-4">
+  <section class="flex flex-col items-center justify-center py-10">
+    <div class="w-full max-w-5xl">
+      <div class="text-center pb-10">
+        <h1 class="text-3xl font-bold pb-2">Sua Agenda</h1>
+        <p class="">Gerencie seus contatos abaixo</p>
+      </div>
+
+      <%- include('includes/messages') %>
+
+      <% if(contatos.length > 0) { %>
+      <div class="rounded-xl bg-white shadow-lg border-b-2">
+        <table class="min-w-full table-auto border-collapse">
+          <thead class="">
+            <tr class="bg-[#827ddb] text-lg text-white">
+              <th class="px-2 py-3 text-center">Nome</th>
+              <th class="px-2 py-3 text-center">Sobrenome</th>
+              <th class="px-2 py-3 text-center">E-mail</th>
+              <th class="px-2 py-3 text-center">Telefone</th>
+              <th class="px-2 py-3 text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% contatos.forEach(contato => { %>
+            <tr class="font-medium text-center">
+              <td class="px-2 py-2"><%= contato.nome %></td>
+              <td class="px-2 py-2"><%= contato.sobrenome %></td>
+              <td class="px-2 py-2"><%= contato.email %></td>
+              <td class="px-2 py-2"><%= contato.telefone %></td>
+              <td class="">
+                <a class="text-blue-500 font-semibold" href="/contato/index/<%= contato._id %>">
+                  <i class=""></i> Editar
+                </a>
+                <a class="text-red-500 font-semibold" href="/contato/delete/<%= contato._id %>">
+                  <i class=""></i> Excluir
+                </a>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+      <% } else { %>
+        <div class="">
+          Não existem contatos cadastrados na sua agenda.
+        </div>
+      <% } %>
+    </div>
+  </section>
+</main>
+
+<%- include('includes/footer') %>
