@@ -1,43 +1,44 @@
 <%- include('includes/header') %>
   <%- include('includes/nav') %>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2"></div>
-
-        <div class="col-lg-8 my-3">
-          <h1 class="display-1 text-center">Contatos</h1>
-          <p class="text-center lead">Crie ou edite seus contatos abaixo:</p>
+    <div class="">
+      <div class="flex flex-col gap-5">
+        <div class="text-center pt-10">
+          <h1 class="text-3xl font-bold">Contatos</h1>
+          <p class="">Crie ou edite seus contatos abaixo:</p>
+        </div>
 
           <%- include('includes/messages') %>
 
+        <div class="flex items-center justify-center min-h-20 w-full pb-10">
           <% if(contato._id) { %>
-          <form action="/contato/edit/<%= contato._id %>" method="POST">
+          <form action="/contato/edit/<%= contato._id %>" method="POST" class="w-full max-w-md flex flex-col gap-4">
           <% } else { %> 
-          <form action="/contato/register" method="POST">
+          <form action="/contato/register" method="POST" class="w-full max-w-md flex flex-col gap-4">
           <% } %>
             <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-            <div class="mb-3">
-              <label>Nome</label>
-              <input value="<%= contato.nome %>" type="text" class="form-control" name="nome">
+            <div class="flex flex-col">
+              <label class="pl-1">Nome</label>
+              <input value="<%= contato.nome %>" type="text" class="form-control p-1 bg-[#d8d8d8] rounded-lg border border-[#bdbdbd] outline-none focus:ring-1 focus:ring-[#bdbdbd]" name="nome">
             </div>
-            <div class="mb-3">
-              <label>Sobrenome</label>
-              <input value="<%= contato.sobrenome %>" type="text" class="form-control" name="sobrenome">
+            <div class="flex flex-col">
+              <label class="pl-1">Sobrenome</label>
+              <input value="<%= contato.sobrenome %>" type="text" class="form-control p-1 bg-[#d8d8d8] rounded-lg border border-[#bdbdbd] outline-none focus:ring-1 focus:ring-[#bdbdbd]" name="sobrenome">
             </div>
-            <div class="mb-3">
-              <label>E-mail</label>
-              <input value="<%= contato.email %>" type="email" class="form-control" name="email">
+            <div class="flex flex-col">
+              <label class="pl-1">E-mail</label>
+              <input value="<%= contato.email %>" type="email" class="form-control p-1 bg-[#d8d8d8] rounded-lg border border-[#bdbdbd] outline-none focus:ring-1 focus:ring-[#bdbdbd]" name="email">
             </div>
-            <div class="mb-3">
-              <label>Telefone</label>
-              <input value="<%= contato.telefone %>" type="tel" class="form-control" name="telefone">
+            <div class="flex flex-col">
+              <label class="pl-1">Telefone</label>
+              <input value="<%= contato.telefone %>" type="tel" class="form-control p-1 bg-[#d8d8d8] rounded-lg border border-[#bdbdbd] outline-none focus:ring-1 focus:ring-[#bdbdbd]" name="telefone">
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <div class="flex items-center justify-center pt-5">
+              <button type="submit" class="bg-blue-500 px-5 py-2 rounded-xl font-semibold text-white text-lg">Salvar</button>
+            </div>
           </form>
-
-        <div class="col-lg-2"></div>
         </div>
       </div>
+    </div>
 
       <%- include('includes/footer') %>

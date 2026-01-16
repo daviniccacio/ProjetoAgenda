@@ -15,7 +15,7 @@
       <div class="rounded-xl bg-white shadow-lg border-b-2">
         <table class="min-w-full table-auto border-collapse">
           <thead class="">
-            <tr class="bg-[#827ddb] text-lg text-white">
+            <tr class="bg-[#827ddb] text-lg text-white shadow-md">
               <th class="px-2 py-3 text-center">Nome</th>
               <th class="px-2 py-3 text-center">Sobrenome</th>
               <th class="px-2 py-3 text-center">E-mail</th>
@@ -25,7 +25,7 @@
           </thead>
           <tbody>
             <% contatos.forEach(contato => { %>
-            <tr class="font-medium text-center">
+            <tr class="font-medium text-center border-b">
               <td class="px-2 py-2"><%= contato.nome %></td>
               <td class="px-2 py-2"><%= contato.sobrenome %></td>
               <td class="px-2 py-2"><%= contato.email %></td>

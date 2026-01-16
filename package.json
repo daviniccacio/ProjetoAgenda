@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js -e js,ejs --ignore public --ignore frontend",
     "build:js": "webpack -w",
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./public/css/style.css --watch",
+    "build:css": "npx tailwindcss -i ./src/views/input.css -o ./public/css/style.css --watch",
     "dev": "concurrently \"npm run start\" \"npm run build:js\" \"npm run build:css\""
   },
   "keywords": [],
